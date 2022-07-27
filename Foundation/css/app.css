@@ -4,17 +4,50 @@ body {
     font-family: 'Space Grotesk';
 }
 
+.background-image {
+    height: 100vh;
+    background-color: grey;
+}
+
+.background-image::before {
+    content: "";
+    position: fixed;
+    background-image: url(https://images.pexels.com/photos/33779/hand-microphone-mic-hold.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.3;
+}
+
 #title {
     font-weight: bolder;
     font-size: 175px;
     text-align: center;
-    height: 525px;
-    background-color: rgb(24, 247, 24);
+    position: relative;
+    color: white;
+    /* height: 525px;*/
+    
+}
+
+#searchHistory {
+    position: relative;
+    height: 100vh;
+    width: 400px;
+    /* background-color: red; */
+}
+
+form {
+    position: relative;
+    margin-top: 40px;
 }
 
 #search-btn {
-    background-color: rgb(233, 248, 24);
-    border: black solid 5px;
+    /* background-color: rgb(233, 248, 24); */
+    border: black 5px;
     display: flex;
     align-items: center;
     color: black; 
@@ -24,6 +57,7 @@ body {
     padding-bottom: 25px;
     font-size: 40px;
     font-weight: bold;
+    position: relative;
 }
 
 #btnContainer {
