@@ -1,4 +1,4 @@
-const artistNameEl = document.getElementById("artistNameInput");
+const artistInputEl = document.getElementById("artistInput");
 const formEl = document.getElementById("myForm");
 const searchHistoryEl = document.getElementById("searchHistory")
 const dbKey = 523532
@@ -6,8 +6,8 @@ const dbKey = 523532
 formEl.addEventListener("submit", (e) => {
     e.preventDefault();
     // addSearchHistory();
-    findMySong(artistNameEl.value)
-    console.log(artistNameEl.value.trim());
+    findMySong(artistInputEl.value);
+    console.log(artistInputEl.value);
 });
 
 // function addSearchHistory () {
@@ -18,7 +18,7 @@ formEl.addEventListener("submit", (e) => {
 // }
 
 function findMySong(artistName) {
-    let url = "https://theaudiodb.com/api/v1/json/"+dbKey+"/searchtrack.php?s="+artistName+""
+    let url = "theaudiodb.com/api/v1/json/2/search.php?s="+artistName+""
     fetch(url, {
         method: "GET",
     }) 
