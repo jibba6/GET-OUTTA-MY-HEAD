@@ -5,6 +5,7 @@ const dbKey = 523532
 // event listener for the form. This is where the functions pulling the information from the form should run.
 formEl.addEventListener("submit", (e) => {
     e.preventDefault();
+
     addSearchHistory();
     findMySong(artistInputEl.value);
     console.log(artistInputEl.value);
