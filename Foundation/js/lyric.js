@@ -1,4 +1,5 @@
 const artistInputEl = document.getElementById("artistInput");
+const trackInputEl = document.getElementById("trackInput");
 const formEl = document.getElementById("myForm");
 const searchHistoryEl = document.getElementById("searchHistory")
 const dbKey = 523532
@@ -7,7 +8,7 @@ formEl.addEventListener("submit", (e) => {
     e.preventDefault();
 
     addSearchHistory();
-    findMySong(artistInputEl.value);
+    findMySong(artistInputEl.value, trackInputEl.value);
     console.log(artistInputEl.value);
 });
 // appends the child to show the recent search history in order for a person to reselect it. 
@@ -19,8 +20,9 @@ function addSearchHistory () {
     searchHistoryEl.appendChild(addSearchHistoryBtn)
 }
 // fetch pulling the top ten tracks to then plug into youtube
-function findMySong(artistName) {
-    let url = 'https://theaudiodb.com/api/v1/json/'+dbKey+'/searchtrack.php?s='+artistName+'&t=yellow'
+// TODO creat perameter for trackName in the fetch to be able to pass the actual track name from the search. 
+function findMySong(artistName, trackName) {
+    let url = 'https://theaudiodb.com/api/v1/json/'+dbKey+'/searchtrack.php?s='+artistName+'&t='+trackName+''
     fetch(url, {
         method: "GET",
     }) 
@@ -32,7 +34,7 @@ function findMySong(artistName) {
     displayBio(data)
     })
 };
-
+//function telling what specific information to pull from the api and where to put it on the page. 
 function displayBio (data) {
     const trackPath = data.track[0];
     const bioSpace = document.getElementById('searchResults');
