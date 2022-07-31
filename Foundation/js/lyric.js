@@ -20,20 +20,25 @@ function addSearchHistory () {
 }
 // fetch pulling the top ten tracks to then plug into youtube
 function findMySong(artistName) {
-    let url = 'https://theaudiodb.com/api/v1/json/'+dbKey+'/track-top10.php?s='+artistName+''
+    let url = 'https://theaudiodb.com/api/v1/json/'+dbKey+'/searchtrack.php?s='+artistName+'&t=yellow'
     fetch(url, {
         method: "GET",
     }) 
     .then(function (response) {
-    return response
+    return response.json()
     })
     .then(function(data){
-        console.log(data.strTrack)
-    // displayTopTen(data)
+        console.log(data)
+    displayBio(data)
     })
 };
 
-// function displayTopTen (data) {
-//     const topTen = data.strTrack[9]
-// }
+function displayBio (data) {
+    const trackPath = data.track[0];
+    const bioSpace = document.getElementById('searchResults');
+    const trackInfo = trackPath.strDescriptionEN;
+    const bioEl = document.createElement("p");
+    bioEl.innerHTML = trackInfo;
+    bioSpace.appendChild(bioEl)
+}
 
