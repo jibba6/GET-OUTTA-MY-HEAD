@@ -13,9 +13,9 @@ formEl.addEventListener("submit", (e) => {
 });
 // appends the child to show the recent search history in order for a person to reselect it. 
 function addSearchHistory () {
-    const addSearchHistoryBtn = document.createElement("button")
+    const addSearchHistoryBtn = document.createElement("ul")
     // TODO add class attributes to created buttons
-    addSearchHistoryBtn.classList.add("button")
+    addSearchHistoryBtn.classList.add("li")
     addSearchHistoryBtn.innerHTML = artistInputEl.value
     searchHistoryEl.appendChild(addSearchHistoryBtn)
 }
