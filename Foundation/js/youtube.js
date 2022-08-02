@@ -17,4 +17,4 @@ $(document).ready(function(){
                 $("#searchResults").html(video)
         })
     }
-})
+});
