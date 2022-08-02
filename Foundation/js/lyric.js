@@ -20,8 +20,10 @@ function addSearchHistory () {
    const addSearchHistoryBtn = document.createElement("ul")
     // TODO add class attributes to created buttons
     addSearchHistoryBtn.classList.add("li")
-    addSearchHistoryBtn.innerHTML = artistInputEl.value
+    addSearchHistoryBtn.innerHTML = ( "Artist Name: " + artistInputEl.value + " Track Name: "  +  trackInputEl.value)
     searchHistoryEl.appendChild(addSearchHistoryBtn)
+    
+
 }
 // fetch pulling the top ten tracks to then plug into youtube
 function findMySong(artistName, trackName) {
@@ -40,11 +42,10 @@ function findMySong(artistName, trackName) {
 //function telling what specific information to pull from the api and where to put it on the page. 
 function displayBio (data) {
     const trackPath = data.track[0];
-    const bioSpace = document.getElementById('trackResults');
     const trackInfo = trackPath.strDescriptionEN;
     const bioEl = document.createElement("p");
     bioEl.innerHTML = "Song info: " + trackInfo;
-    bioSpace.appendChild(bioEl)
+    $("#trackResults").html(bioEl);
 }
 
 
