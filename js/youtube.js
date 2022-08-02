@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    const API_KEY = "AIzaSyBlaVTroe_yXyz4jzAMh-u5AZqyBKlLL68";
+    const API_KEY = "AIzaSyB-KTLmnWVFlpiHB2CIT7PCG-1jmAZo1FE";
     var video = '';
 
     $("form").submit(function (event){
