@@ -48,6 +48,6 @@ form {
     padding: 10px;
 }
 
-#searchResults {
+#searchResults, #trackResults {
     position: relative;
 }
