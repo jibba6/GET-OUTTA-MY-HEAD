@@ -20,8 +20,10 @@ function addSearchHistory () {
    const addSearchHistoryBtn = document.createElement("ul")
     // TODO add class attributes to created buttons
     addSearchHistoryBtn.classList.add("li")
-    addSearchHistoryBtn.innerHTML = artistInputEl.value
+    addSearchHistoryBtn.innerHTML = ( "Artist Name: " + artistInputEl.value + " Track Name: "  +  trackInputEl.value)
     searchHistoryEl.appendChild(addSearchHistoryBtn)
+    
+
 }
 // fetch pulling the top ten tracks to then plug into youtube
 function findMySong(artistName, trackName) {
