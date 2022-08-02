@@ -20,7 +20,7 @@ function addSearchHistory () {
    const addSearchHistoryBtn = document.createElement("ul")
     // TODO add class attributes to created buttons
     addSearchHistoryBtn.classList.add("li")
-    addSearchHistoryBtn.innerHTML = ("Track Name:"  + " " trackInputEl.value  + " " "Artist Name:" + " " artistInputEl.value)
+    addSearchHistoryBtn.innerHTML = ( "Artist Name: " + artistInputEl.value + " Track Name: "  +  trackInputEl.value)
     searchHistoryEl.appendChild(addSearchHistoryBtn)
     
 
