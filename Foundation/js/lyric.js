@@ -16,11 +16,12 @@ formEl.addEventListener("submit", (e) => {
 });
 // appends the child to show the recent search history in order for a person to reselect it. 
 function addSearchHistory () {
-    const addSearchHistoryBtn = document.createElement("button");
+
+   const addSearchHistoryBtn = document.createElement("ul")
     // TODO add class attributes to created buttons
-    addSearchHistoryBtn.classList.add("button");
-    addSearchHistoryBtn.innerHTML = artistInputEl.value;
-    searchHistoryEl.appendChild(addSearchHistoryBtn);
+    addSearchHistoryBtn.classList.add("li")
+    addSearchHistoryBtn.innerHTML = artistInputEl.value
+    searchHistoryEl.appendChild(addSearchHistoryBtn)
 }
 // fetch pulling the top ten tracks to then plug into youtube
 function findMySong(artistName, trackName) {
