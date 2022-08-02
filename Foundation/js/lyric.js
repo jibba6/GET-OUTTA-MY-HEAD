@@ -40,11 +40,10 @@ function findMySong(artistName, trackName) {
 //function telling what specific information to pull from the api and where to put it on the page. 
 function displayBio (data) {
     const trackPath = data.track[0];
-    const bioSpace = document.getElementById('trackResults');
     const trackInfo = trackPath.strDescriptionEN;
     const bioEl = document.createElement("p");
     bioEl.innerHTML = "Song info: " + trackInfo;
-    bioSpace.appendChild(bioEl)
+    $("#trackResults").html(bioEl);
 }
 
 
